@@ -1,6 +1,6 @@
 {
   "name": "hangup",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "author": "Robert Hang",
   "devDependencies": {
     "grunt": "~0.4.5"
