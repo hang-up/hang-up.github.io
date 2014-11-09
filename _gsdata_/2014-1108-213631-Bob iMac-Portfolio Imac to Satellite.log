@@ -1,0 +1,17 @@
+2014-11-08 21:36:31: bob-satellite.bobchill.goodsync is on local network, trying direct connect at 192.168.11.104:33333
+2014-11-08 21:36:32: -- Analysis Started by User
+2014-11-08 21:36:34: Changes: 8, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 1639
+2014-11-08 21:36:34: Left to Right: Copy File: 1 Delete File: 5 Rename/Move File/Folder: 2 
+2014-11-08 21:36:34: -- Analysis Complete. Time 00:00:03, Speed: 546 files/s
+2014-11-08 21:36:34: 
+2014-11-08 21:37:09: bob-satellite.bobchill.goodsync is on local network, trying direct connect at 192.168.11.104:33333
+2014-11-08 21:37:09: == Sync Started by User
+2014-11-08 21:37:09: Delete File 'gstp://bob-satellite.bobchill.goodsync/file:///~Bob/Desktop/site 1/hangup concept/PROD/01.jpg'
+2014-11-08 21:37:09: Delete File 'gstp://bob-satellite.bobchill.goodsync/file:///~Bob/Desktop/site 1/hangup concept/PROD/02.jpg'
+2014-11-08 21:37:09: Delete File 'gstp://bob-satellite.bobchill.goodsync/file:///~Bob/Desktop/site 1/hangup concept/PROD/03.jpg'
+2014-11-08 21:37:09: Delete File 'gstp://bob-satellite.bobchill.goodsync/file:///~Bob/Desktop/site 1/hangup concept/PROD/about.html'
+2014-11-08 21:37:09: Delete File 'gstp://bob-satellite.bobchill.goodsync/file:///~Bob/Desktop/site 1/hangup concept/PROD/workshop_index.html'
+2014-11-08 21:37:09: Copy Over '/Volumes/Data1/Html/hangup concept/PROD/index.html' -> 'gstp://bob-satellite.bobchill.goodsync/file:///~Bob/Desktop/site 1/hangup concept/PROD/index.html'
+2014-11-08 21:37:09: Move File gstp://bob-satellite.bobchill.goodsync/file:///~Bob/Desktop/site 1/hangup concept/PROD/script/component.css -> gstp://bob-satellite.bobchill.goodsync/file:///~Bob/Desktop/site 1/hangup concept/PROD/component.css
+2014-11-08 21:37:10: == Sync Complete. Time: 00:00:01, Speed: 32.4 KB/s, OK: 8, Errors: 0
+2014-11-08 21:37:10: 
