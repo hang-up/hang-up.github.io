@@ -1,31 +1,25 @@
-var panelObject = {    
-    narrowTitle : function() {
-        var $titles = $(".narrowHover");
-        
-        $titles.hover(function() {
-            $(this).next(".title-caption").fadeIn();            
-        }, function() {
-            $(this).next(".title-caption").fadeOut();
-        })
-        
-    },
-    
+var panelObject = {
     panel : function() {
-        var $workshopTrigger = $("#workshop_trigger");
-        var $aboutTrigger = $("#about_trigger");
         var $footerMain = $("#footer-main");
                 
-        $workshopTrigger.click(function() {
-            $(".workshop").addClass("open").fadeIn();            
-            panelObject.displayMenu();
+        $("#home").on("click", "#workshop_trigger", function() {
+            $(".workshop").removeClass("zoomOut").addClass("open zoomIn");            
+            panelObject.displayMenu(); 
+            $footerMain.hide();
             
+            setTimeout(function() {
+                $("#particles").remove();
+            }, 1000);
         });
         
-        $aboutTrigger.click(function() {
-            $(".about").addClass("open").fadeIn();
-            panelObject.displayMenu();       
-            
+        $("#home").on("click", "#about_trigger", function() {
+            $(".about").removeClass("zoomOut").addClass("open zoomIn");
+            panelObject.displayMenu();                   
             $footerMain.hide();
+            
+            setTimeout(function() {
+                $("#particles").remove();
+            }, 1000);
         });
     },
     
@@ -34,22 +28,19 @@ var panelObject = {
     },
     
     init: function() {
-        panelObject.narrowTitle();
         panelObject.panel();
     }
-
 };
 
 var Menu = {
-  el: {
+    domInserted : '<div id="particles"><div class="intro">              <h1 class="title1 big white">Hang Up <span class="animated bounce infinite">!</span></h1>            <p class="caption xsmall white">A workshop for ideas.</p>            <a class="btn" href="#" id="workshop_trigger">Workshop</a>            <a class="btn" href="#" id="about_trigger">About me</a>        </div>    </div>',
+    
+    el: {
         ham: $('.menu'),
         menuTop: $('.menu-top'),
         menuBottom: $('.menu-bottom'),
-    },
-  
-    init: function() {
-        Menu.activate();
-        Menu.action();
+        footerMain : $("#footer-main"),
+        body: $("body")
     },
   
     activate: function() {
@@ -57,12 +48,35 @@ var Menu = {
         Menu.el.menuBottom.toggleClass('menu-bottom-click');    
     },
     
+    /*
+    Once clicked on the ham, toggle the click class on top and bottom.
+    Then add .zoomOut to .open and remove .zoomIn (fade out transition)
+    remove .open 1s after zoomOut transition is over (no blink)
+    
+    Initialize the particlesSection (create particles + update background)
+    
+    Show main footer.    
+    */
     action: function() {
         Menu.el.ham.click(function() {
             Menu.activate();
             
-            $(".open").removeClass("open").fadeOut();
+            $(".open").addClass("zoomOut").removeClass("zoomIn");
+            Menu.el.body.prepend(Menu.domInserted);
+            
+            setTimeout(function(){
+                $('.open').removeClass("open");
+            },500);
+            
+            particlesSection.init();
+
+            Menu.el.footerMain.show();
         })
+    },
+    
+    init: function() {
+        Menu.activate();
+        Menu.action();
     }
 };
 
@@ -87,8 +101,7 @@ var displayProjects = {
     
     init : function() {
         displayProjects.createNodes(Projects.countEntity());
-    }
-    
+    } 
 }
 
 var particlesSection = {
@@ -104,8 +117,20 @@ var particlesSection = {
         var p_length = particlesSection.palette.length;
         var i = Math.floor(Math.random() * p_length);
         particlesSection.setGradient(particlesSection.palette[i]);
+        
+        $('#particles').particleground({
+            dotColor: '#fff8e3',
+            lineColor: '#fff8e3', 
+            density: 15000,
+            particleRadius: 5,
+            curvedLines: true,
+            parallaxMultiplier: 10
+        });
+        
+        $('.intro').css({
+            'margin-top': -($('.intro').height() / 2)
+        });
     }
-    
 }
 
 var Utils = {
@@ -120,7 +145,7 @@ var Utils = {
     //from : http://stackoverflow.com/a/6680877
     trailingSlash : function(link) {
         return link.replace(/\/$/, "");
-    }
+    } 
 }
 
 $(document).ready(function() {
@@ -128,17 +153,5 @@ $(document).ready(function() {
     displayProjects.init();   
     particlesSection.init();
     Menu.init();
-    
-    $('#particles').particleground({
-        dotColor: '#fff8e3',
-        lineColor: '#fff8e3', 
-          density: 15000,
-          particleRadius: 5,
-          curvedLines: true,
-          parallaxMultiplier: 10
-      });
-    $('.intro').css({
-        'margin-top': -($('.intro').height() / 2)
-    });
 })
 
