@@ -121,7 +121,7 @@ var particlesSection = {
         $('#particles').particleground({
             dotColor: '#fff8e3',
             lineColor: '#fff8e3', 
-            density: 15000,
+            density: 19000,
             particleRadius: 5,
             curvedLines: true,
             parallaxMultiplier: 10
