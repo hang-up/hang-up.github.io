@@ -25,7 +25,7 @@ var Projects = Object.create(Data, {
     },
     
     entity_1 : {
-        value : new Entity("Made InFrance", "Projects/Art_France/thumb.png", "Projects/Art_France/made_In_france.png", "Another work with Illustrator. <br />Made in France on my way to Montreal."),
+        value : new Entity("Made InFrance", "Projects/Art_France/thumb.png", "Projects/Art_France/made_in_france.png", "Another work with Illustrator. <br />Made in France on my way to Montreal."),
         enumerable : true
     },
     
