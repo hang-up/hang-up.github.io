@@ -21,7 +21,7 @@ var morphObject = {
         $grid_content : $(".grid-content"),
         $footer_main : $("#footer-main"),
         $slim : $(".slim"),
-        $caption : $(".open .morphable:nth-child(2)")
+        $caption : $(".caption_out")
     },
     
     morph : function() {
