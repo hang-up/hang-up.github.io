@@ -25,7 +25,11 @@ var Projects = Object.create(Data, {
     },
     
     entity_1 : {
+<<<<<<< HEAD
         value : new Entity("Made InFrance", "Projects/Art_France/thumb.png", "Projects/Art_France/made_in_france.png", "Made in France on my way to Montreal."),
+=======
+        value : new Entity("Made InFrance", "Projects/Art_France/thumb.png", "Projects/Art_France/made_in_france.png", "Another work with Illustrator. <br />Made in France on my way to Montreal."),
+>>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
         enumerable : true
     },
     
@@ -47,5 +51,9 @@ var Projects = Object.create(Data, {
     entity_5 : {
         value : new Entity("Trends Of2014", "Projects/Trends/thumb.jpg", "Projects/Trends/index.html", "2014 was a year of expectations. <br/> Here are its biggest trends." ),
         enumerable : true
+<<<<<<< HEAD
     }
+=======
+    }    
+>>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
 });

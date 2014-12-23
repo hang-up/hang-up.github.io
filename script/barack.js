@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 ** morphObject is responsible for bringing the morphing ability to buttons.
 
@@ -127,14 +128,92 @@ var morphObject = {
             var p_length = particlesSection.palette.length,
                 i = Math.floor(Math.random() * p_length);
             particlesSection.setGradient(particlesSection.palette[i]);
+=======
+var panelObject = {
+    panel : function() {
+        var $footerMain = $("#footer-main");
+                
+        $("#home").on("click", "#workshop_trigger", function() {
+            $(".workshop").removeClass("zoomOut").addClass("open zoomIn");            
+            panelObject.displayMenu(); 
+            $footerMain.hide();
+            
+            setTimeout(function() {
+                $("#particles").remove();
+            }, 1000);
+        });
+        
+        $("#home").on("click", "#about_trigger", function() {
+            $(".about").removeClass("zoomOut").addClass("open zoomIn");
+            panelObject.displayMenu();                   
+            $footerMain.hide();
+            
+            setTimeout(function() {
+                $("#particles").remove();
+            }, 1000);
+>>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
         });
     },
     
     init: function() {
+<<<<<<< HEAD
         morphObject.morph();
     }
 };
 
+=======
+        panelObject.panel();
+    }
+};
+
+var Menu = {
+    domInserted : '<div id="particles"><div class="intro">              <h1 class="title1 big white">Hang Up <span class="animated bounce infinite">!</span></h1>            <p class="caption xsmall white">A workshop for ideas.</p>            <a class="btn" href="#" id="workshop_trigger">Workshop</a>            <a class="btn" href="#" id="about_trigger">About me</a>        </div>    </div>',
+    
+    el: {
+        ham: $('.menu'),
+        menuTop: $('.menu-top'),
+        menuBottom: $('.menu-bottom'),
+        footerMain : $("#footer-main"),
+        body: $("body")
+    },
+  
+    activate: function() {
+        Menu.el.menuTop.toggleClass('menu-top-click');
+        Menu.el.menuBottom.toggleClass('menu-bottom-click');    
+    },
+    
+    /*
+    Once clicked on the ham, toggle the click class on top and bottom.
+    Then add .zoomOut to .open and remove .zoomIn (fade out transition)
+    remove .open 1s after zoomOut transition is over (no blink)
+    
+    Initialize the particlesSection (create particles + update background)
+    
+    Show main footer.    
+    */
+    action: function() {
+        Menu.el.ham.click(function() {
+            Menu.activate();
+            
+            $(".open").addClass("zoomOut").removeClass("zoomIn");
+            Menu.el.body.prepend(Menu.domInserted);
+            
+            setTimeout(function(){
+                $('.open').removeClass("open");
+            },500);
+            
+            particlesSection.init();
+
+            Menu.el.footerMain.show();
+        })
+    },
+    
+    init: function() {
+        Menu.activate();
+        Menu.action();
+    }
+};
+>>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
 
 var displayProjects = {
     createNodes : function(array) {
@@ -174,7 +253,15 @@ var particlesSection = {
         });
     },
     
+<<<<<<< HEAD
     init: function() {        
+=======
+    init: function() {
+        var p_length = particlesSection.palette.length;
+        var i = Math.floor(Math.random() * p_length);
+        particlesSection.setGradient(particlesSection.palette[i]);
+        
+>>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
         $('#particles').particleground({
             dotColor: '#fff8e3',
             lineColor: '#fff8e3', 
@@ -183,6 +270,13 @@ var particlesSection = {
             curvedLines: true,
             parallaxMultiplier: 10
         });
+<<<<<<< HEAD
+=======
+        
+        $('.intro').css({
+            'margin-top': -($('.intro').height() / 2)
+        });
+>>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
     }
 }
 
@@ -204,5 +298,9 @@ var Utils = {
 $(document).ready(function() {
     morphObject.init();
     particlesSection.init();
+<<<<<<< HEAD
+=======
+    Menu.init();
+>>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
 })
 
