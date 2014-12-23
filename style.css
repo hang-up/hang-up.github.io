@@ -78,7 +78,6 @@ body {
     transition: opacity 0.3s 0.5s;
 }
 
-<<<<<<< HEAD
 .morphable, .grid, .slim {
     opacity: 0;
     -webkit-transform: translate3d(0,100px,0);
@@ -86,11 +85,6 @@ body {
         transform: translateY(100px);
     -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
     transition: transform 0.5s, opacity 0.5s;
-=======
-.about, .workshop {
-    padding-top: 4em;
-    padding-bottom: 4em;   
->>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
 }
 
 .open .morphable:first-child, .open .grid:first-child,   {
@@ -275,11 +269,7 @@ p {
     }
 }
 
-<<<<<<< HEAD
 
-=======
-/* MEDIA QUERIES */
->>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
 @media only screen and (max-width:885px) {    
     .title-caption {
         font-size: 1em;
@@ -436,63 +426,6 @@ p {
   }
 }
 
-<<<<<<< HEAD
-=======
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-            transform: scale3d(.3, .3, .3);
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-.zoomIn {
-  -webkit-animation-name: zoomIn;
-          animation-name: zoomIn;
-}
-
-@-webkit-keyframes zoomOut {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-            transform: scale3d(.3, .3, .3);
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes zoomOut {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-            transform: scale3d(.3, .3, .3);
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-.zoomOut {
-  -webkit-animation-name: zoomOut;
-          animation-name: zoomOut;
-}
-
->>>>>>> 80e4bc5b1118ac85c102aeaa37b0c751ca74b0fa
 
 .animated {
   -webkit-animation-duration: 1s;
