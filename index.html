@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width">
     <title>Hang Up - Home</title>
     
-    <link rel="stylesheet" href="media-queries.css">
-    <link rel="stylesheet" href="style.css">    
     <link rel="stylesheet" href="component.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato|Wire+One|News+Cycle|Playfair+Display:700italic|Merriweather' rel='stylesheet' type='text/css'>
-    
+    <link rel="stylesheet" href="style.css">    
+    <link href='http://fonts.googleapis.com/css?family=Lato|Wire+One|News+Cycle|Playfair+Display:700italic|Merriweather' rel='stylesheet' type='text/css'>    
     <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -19,72 +17,75 @@
 <body id="home">
     <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->	
-    <div class="menu">
-        <span class="menu-global menu-top menu-top-click"></span>
-        <span class="menu-global menu-bottom menu-bottom-click"></span>
-    </div>
+    <![endif]-->
     
     <div id="particles">
         <div class="intro">  
-            <h1 class="title1 big white">Hang Up!</h1>
+            <h1 class="title1 big white">Hang Up <span class="animated bounce infinite">!</span></h1>
             <p class="caption xsmall white">A workshop for ideas.</p>
             <a class="btn" href="#" id="workshop_trigger">Workshop</a>
-            <a class="btn" href="#" id="about_trigger">About me</a>
+            <a class="btn" href="#" id="about_trigger">Hello !</a>
         </div>
     </div>
 <!--    </particles>-->
     
     
-<!--    </menu>-->
-    
-    <div class="container workshop">
-        <h1 class="title1 small dark narrowHover" id="workshop_button">WORKSHOP</h1>
-        <p class="caption xsmall dark">Here's to making the amazing happen.</p>
-        <div class="grid"></div>
+    <div class="EXPworkshop-container">
+        <h1 class="title1 small dark morphable" id="workshop_button">WORKSHOP</h1>
+        <p class="caption xsmall morphable">Here's to the amazing.</p>
         
-        <div class="footer" style="background: #fff" id="footer-workshop">
-            <p class="displayOn title-caption" id="footer-title">Do you have time for a coffee? </p> 
-            <p class="displayOn title-caption" style="font-size : 1em; padding-bottom: 4%; color: #c2c2c2">Drop me a line <a href="mailto:nickdanvery@gmail.com" style="color: #888; text-decoration: underline;">here!</a> <br/><br/> Montreal. 2014.</p>
-        </div>
+        <div class="grid-content" >                    
+            <div class="grid" id="1">
+            </div>
+            <div class="grid" id="2">
+            </div>
+            <div class="grid" id="3">
+            </div>
+            
+            <div class="footer" style="background: #fff" id="footer-workshop">
+                <p class="displayOn title-caption" id="footer-title">Do you have time for a tea? </p> 
+                <p class="displayOn title-caption" style="font-size : 1em; padding-bottom: 4%; color: #c2c2c2">Drop me a line <a href="mailto:nickdanvery@gmail.com" style="color: #888; text-decoration: underline;">here!</a> <br/><br/> Montreal. 2014.</p>
     </div>
-<!--    </workshop>-->
+        </div>
+        
+        <span class="close-cross" data-target="workshop"></span>
+    </div>
     
-    <div class="container about">
-        <h1 class="title1 small dark narrowHover" id="about_button">Hello</h1>
-        <p class="caption xsmall dark">My name is Robert Hang and I am a tea addict front end developper.</p>
-        
-        
-        <div class="slim" >
+    <div class="EXPabout-container">
+        <h1 class="title1 small dark morphable" id="about_button">Hello!</h1>
+        <p class="caption xsmall morphable">My name is Robert and I am a tea addict front end developper.</p>
+    
+        <div class="slim" style="display:none">
             <p>I craft digital experiences with only one goal in mind: to amaze in the most seamless way possible.</p>
             <p>Because there is joy when something works. But there is beauty when it works intuitively.</p>
             <br/>
             <p>There is not learning without trying lots of ideas and failing lots of times.</p>
-            <p>And I have made a lot of mistakes. But I have refined my process and learnt what it's like to be humble. And to listen. </p>
+            <p>And I have made a lot of mistakes. But I have refined my process and learned what it's like to be humble. And to listen. </p>
             <br/>
             <p>In a complex ecosystem where standing out means pushing the boundaries, I stand by the belief that there is a profound beauty in simplicity. </p>
             <br/>
             <p>Simplicity, clarity and efficiency, these are my mottos for you.</p>
+            
+            <div class="footer" style="background: #fff" id="footer-about">
+                <p class="displayOn title-caption" id="footer-title">Do you have time for a tea? </p> 
+                <p class="displayOn title-caption" style="font-size : 1em; padding-bottom: 4%; color: #c2c2c2">Drop me a line <a href="mailto:nickdanvery@gmail.com" style="color: #888; text-decoration: underline;">here!</a> <br/><br/> Montreal. 2014.</p>
+            </div>
         </div>
         
-        <div class="footer" style="background: #fff" id="footer-about">
-            <p class="displayOn title-caption" id="footer-title">Do you have time for a coffee? </p> 
-            <p class="displayOn title-caption" style="font-size : 1em; padding-bottom: 4%; color: #c2c2c2">Drop me a line <a href="mailto:nickdanvery@gmail.com" style="color: #888; text-decoration: underline;">here!</a> <br/><br/> Montreal. 2014.</p>
-        </div>
+        <span class="close-cross" data-target="about"></span>
     </div>
-<!--    </about>-->
-    
     
     <div class="footer" style="background: #fff" id="footer-main">
-        <p class="displayOn title-caption" id="footer-title">Do you have time for a coffee? </p> 
+        <p class="displayOn title-caption" id="footer-title">Do you have time for a tea? </p> 
         <p class="displayOn title-caption" style="font-size : 1em; padding-bottom: 4%; color: #c2c2c2">Drop me a line <a href="mailto:nickdanvery@gmail.com" style="color: #888; text-decoration: underline;">here!</a> <br/><br/> Montreal. 2014.</p>
     </div>
 <!--    </footer>-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+    
+    <script src="script/barack_min.js"></script>    
     <script type="text/javascript" src="script/jquery.particleground.min.js"></script>
-    <script src="script/barack.js"></script>
-    <script src="script/barackdata.js"></script>
+    <script src="script/barackdata_min.js"></script>
 </body>
 </html>

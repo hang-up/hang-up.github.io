@@ -1,74 +1,145 @@
-var panelObject = {    
-    narrowTitle : function() {
-        var $titles = $(".narrowHover");
-        
-        $titles.hover(function() {
-            $(this).next(".title-caption").fadeIn();            
-        }, function() {
-            $(this).next(".title-caption").fadeOut();
-        })
-        
+/*
+** morphObject is responsible for bringing the morphing ability to buttons.
+
+elem is an object caching useful elements for later use.
+
+morph is the main function.
+It basically works like that :
+
+- Putting an absolute div container on top of the appropriate button (called trigger) and hiding it behind
+- When clicked on the trigger, add the class open responsible for bringing all the morphing effect (inspired from codrops), then changing the css to fill the entire screen on top of everything else (z-index working here)
+- When clicked on the close-cross, delay the opacity change (css transition for smooth effect), then either remove the children (workshop) or hide the container (about)
+
+*/
+
+var morphObject = {
+    elem : {
+        $workshop_trigger : $("#workshop_trigger"),
+        $workshop_container : $(".EXPworkshop-container"),
+        $about_trigger : $("#about_trigger"),
+        $about_container : $(".EXPabout-container"),       
+        $grid_content : $(".grid-content"),
+        $footer_main : $("#footer-main"),
+        $slim : $(".slim"),
+        $caption : $(".caption")
     },
     
-    panel : function() {
-        var $workshopTrigger = $("#workshop_trigger");
-        var $aboutTrigger = $("#about_trigger");
-        var $footerMain = $("#footer-main");
+    morph : function() {
+        // - 7 and - 20 are arbitrary.
+        var total_offset_left_workshop = parseInt($(".intro").css("padding-left").replace("px", "")) + morphObject.elem.$workshop_trigger.offset().left - 7,
+            total_offset_left_about = parseInt($(".intro").css("padding-left").replace("px", "")) + morphObject.elem.$about_trigger.offset().left - 20;
+        
+        //setting up the workshop and about container
+        morphObject.elem.$workshop_container.css( {
+            top: morphObject.elem.$workshop_trigger.offset().top,
+            left: total_offset_left_workshop,
+            height : "50px",
+            width: "160px"
+        });
+        
+        morphObject.elem.$about_container.css( {
+            top: morphObject.elem.$about_trigger.offset().top,
+            left: total_offset_left_about,
+            height : "50px",
+            width: "130px"
+        });
+        
+        //Click on trigger events : workshop then about
+        morphObject.elem.$workshop_trigger.click(function() {
+            morphObject.elem.$workshop_container.addClass("open");
+            
+            displayProjects.init();
+            
+            morphObject.elem.$workshop_container.css( {
+                top: 0,
+                left: 0,
+                height: "100%",
+                width: "100%",
+                background: "white",
+                "z-index": 100
+            });
+            
+            morphObject.elem.$grid_content.css("opacity", 1);
+            morphObject.elem.$caption.css("opacity", 1);
+        })
+        
+        morphObject.elem.$about_trigger.click(function() {
+            morphObject.elem.$about_container.addClass("open");
+            morphObject.elem.$footer_main.hide();
+            
+            morphObject.elem.$about_container.css({
+                top: 0,
+                left: 0,
+                height: "100%",
+                width: "100%",
+                background: "white",
+                "z-index": 100
+            });
+            
+            morphObject.elem.$slim.show().css("opacity", 1);
+            morphObject.elem.$caption.css("opacity", 1);
+        })
+        
+        //Closing events : each cross has a data-target attributes referring to the element it should close
+        $(".close-cross").on("click", function() { 
+            var _parent = $(this).parent();
+            
+            if($(this).data("target") === "workshop") {                
+                morphObject.elem.$grid_content.css("opacity", 0);
+                morphObject.elem.$caption.css("opacity", 0);
                 
-        $workshopTrigger.click(function() {
-            $(".workshop").addClass("open").fadeIn();            
-            panelObject.displayMenu();
+                setTimeout(function() {
+                    _parent.css({
+                        top: morphObject.elem.$workshop_trigger.offset().top,
+                        left: total_offset_left_workshop,
+                        height : "50px",
+                        width: "160px",
+                        "z-index": -10                
+                    });                    
+                }, 1000);
+                
+                setTimeout(function() {
+                    $(".grid").children().remove();
+                }, 950);
+                
+            }
+            else {                
+                morphObject.elem.$slim.css("opacity", 0);
+                morphObject.elem.$caption.css("opacity", 0);
+                morphObject.elem.$footer_main.show();
+                
+                setTimeout(function() {
+                    _parent.css({ 
+                        top: morphObject.elem.$about_trigger.offset().top,
+                        left: total_offset_left_about,
+                        height : "50px",
+                        width: "150px",
+                        "z-index": -10
+                    });
+                }, 1000);
+                
+                setTimeout(function() {
+                    morphObject.elem.$slim.hide();
+                }, 1100);
+            }
             
+            //changes the background every time we close a panel.
+            var p_length = particlesSection.palette.length,
+                i = Math.floor(Math.random() * p_length);
+            particlesSection.setGradient(particlesSection.palette[i]);
         });
-        
-        $aboutTrigger.click(function() {
-            $(".about").addClass("open").fadeIn();
-            panelObject.displayMenu();       
-            
-            $footerMain.hide();
-        });
-    },
-    
-    displayMenu : function() {
-        Menu.activate();
     },
     
     init: function() {
-        panelObject.narrowTitle();
-        panelObject.panel();
-    }
-
-};
-
-var Menu = {
-  el: {
-        ham: $('.menu'),
-        menuTop: $('.menu-top'),
-        menuBottom: $('.menu-bottom'),
-    },
-  
-    init: function() {
-        Menu.activate();
-        Menu.action();
-    },
-  
-    activate: function() {
-        Menu.el.menuTop.toggleClass('menu-top-click');
-        Menu.el.menuBottom.toggleClass('menu-bottom-click');    
-    },
-    
-    action: function() {
-        Menu.el.ham.click(function() {
-            Menu.activate();
-            
-            $(".open").removeClass("open").fadeOut();
-        })
+        morphObject.morph();
     }
 };
+
 
 var displayProjects = {
     createNodes : function(array) {
-        var _length = array.length;
+        var _length = array.length,
+            _count = 1;
         
         for (var i = 0; i<_length; i++)
         {
@@ -81,14 +152,17 @@ var displayProjects = {
           '        </figcaption>' +
           '</figure>';
             
-            $(".grid").hide().append(domElement).fadeIn();
+            $("#" + _count).append(domElement);
+            
+            _count++;
+            
+            if (_count == 4) _count = 1;
         }
     },
     
     init : function() {
         displayProjects.createNodes(Projects.countEntity());
-    }
-    
+    } 
 }
 
 var particlesSection = {
@@ -100,12 +174,16 @@ var particlesSection = {
         });
     },
     
-    init: function() {
-        var p_length = particlesSection.palette.length;
-        var i = Math.floor(Math.random() * p_length);
-        particlesSection.setGradient(particlesSection.palette[i]);
+    init: function() {        
+        $('#particles').particleground({
+            dotColor: '#fff8e3',
+            lineColor: '#fff8e3', 
+            density: 19000,
+            particleRadius: 5,
+            curvedLines: true,
+            parallaxMultiplier: 10
+        });
     }
-    
 }
 
 var Utils = {
@@ -120,25 +198,11 @@ var Utils = {
     //from : http://stackoverflow.com/a/6680877
     trailingSlash : function(link) {
         return link.replace(/\/$/, "");
-    }
+    } 
 }
 
 $(document).ready(function() {
-    panelObject.init();
-    displayProjects.init();   
+    morphObject.init();
     particlesSection.init();
-    Menu.init();
-    
-    $('#particles').particleground({
-        dotColor: '#fff8e3',
-        lineColor: '#fff8e3', 
-          density: 15000,
-          particleRadius: 5,
-          curvedLines: true,
-          parallaxMultiplier: 10
-      });
-    $('.intro').css({
-        'margin-top': -($('.intro').height() / 2)
-    });
 })
 
