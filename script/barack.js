@@ -185,14 +185,14 @@ var particlesSection = {
     },
     
     init: function() {        
-//        $('#particles').particleground({
-//            dotColor: '#fff8e3',
-//            lineColor: '#fff8e3', 
-//            density: 19000,
-//            particleRadius: 5,
-//            curvedLines: true,
-//            parallaxMultiplier: 10
-//        });
+        $('#particles').particleground({
+            dotColor: '#fff8e3',
+            lineColor: '#fff8e3', 
+            density: 19000,
+            particleRadius: 5,
+            curvedLines: true,
+            parallaxMultiplier: 10
+        });
     }
 }
 
