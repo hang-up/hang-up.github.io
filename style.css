@@ -12,7 +12,7 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-    background: linear-gradient(to right, rgb(88, 39, 112), rgb(119, 61, 148), rgb(148, 61, 138), rgb(194, 39, 96), rgb(232, 23, 100));
+    background: linear-gradient(to right, rgb(246, 177, 73), rgb(248, 87, 45), rgb(223, 42, 51), rgb(162, 37, 67), rgb(107, 49, 45))
 }
 
 body {
@@ -28,6 +28,8 @@ body {
 .slim {
     width: 572px;
     margin: 0 auto;
+    
+    transform-origin: bottom;
 }
 
 .slim p {
@@ -46,13 +48,13 @@ body {
 .EXPworkshop-container, .EXPabout-container {
     border: 1px solid white; 
     position: absolute; 
-    background: #fff; 
+/*    background: #fff; */
     z-index: -10;
 
     transition-property: all;            
 
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
     -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
     transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 }
@@ -74,8 +76,8 @@ body {
     height: auto;
     overflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */
     pointer-events: auto;
-    -webkit-transition: opacity 0.3s 0.5s;
-    transition: opacity 0.3s 0.5s;
+    -webkit-transition: opacity 0.5s 0.8s;
+    transition: opacity 0.5s 0.8s;
 }
 
 .morphable, .grid, .slim {
@@ -83,23 +85,23 @@ body {
     -webkit-transform: translate3d(0,100px,0);
     -ms-transform: translateY(100px);
         transform: translateY(100px);
-    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-    transition: transform 0.5s, opacity 0.5s;
+    -webkit-transition: -webkit-transform 0.8s, opacity 0.8s;
+    transition: transform 0.8s, opacity 0.8s;
 }
 
 .open .morphable:first-child, .open .grid:first-child,   {
-    -webkit-transition-delay: 0.4s;
-    transition-delay: 0.4s;
+    -webkit-transition-delay: 0.7s;
+    transition-delay: 0.7s;
 }
 
 .open .morphable:nth-child(2), .open .grid:nth-child(2) {
-    -webkit-transition-delay: 0.45s;
-    transition-delay: 0.45s;
+    -webkit-transition-delay: 0.75s;
+    transition-delay: 0.75s;
 }
 
 .open .morphable:nth-child(3), .open .grid:nth-child(3), .open .slim {
-    -webkit-transition-delay: 0.5s;
-    transition-delay: 0.5s;
+    -webkit-transition-delay: 0.8s;
+    transition-delay: 0.8s;
 }
 
 .open .morphable, .open .grid, .open .slim {
@@ -117,7 +119,7 @@ body {
     letter-spacing: 0.015em;
 }
 .caption {
-    margin: 0 0 60px 0;
+    margin: 20px 0 60px 0;
     text-align: center;
 }
 
@@ -142,9 +144,10 @@ body {
 }
         /* SPECIAL STYLES */
 #workshop_button, #about_button {
+    font-family: "News Cycle", sans-serif;
     text-align: center;
     cursor: default;
-    margin-top: 5%;
+    margin-top: 10%;
     -webkit-transition: all 0.1s ease-in;
     
             transition: all 0.1s ease-in;
@@ -176,6 +179,11 @@ body {
     color: #fff;
 }
 
+.transparent {
+    color: rgba(0,0,0,0) !important;
+}
+
+/*
 .white::after {
     content: '';
     width: 80px;
@@ -185,11 +193,17 @@ body {
     margin: 20px auto;
     line-height: 1.1;
 }
+*/
 
 .dark {
     color: #000;
 }
 
+.gray {
+    color: #888;
+}
+
+/*
 .dark::after {
     content: '';
     width: 80px;
@@ -199,6 +213,7 @@ body {
     margin: 20px auto;
     line-height: 1.1;
 }
+*/
 
 .narrowHover:hover {
     letter-spacing: -0.5px;
@@ -251,7 +266,7 @@ p {
           transition: all 0.4s;
     cursor: pointer;
 }
-.btn:hover {
+.btn:hover, .btn:active, .btn:focus {
   color: #888;
   border-color: transparent;
     background: #fff;

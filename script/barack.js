@@ -14,69 +14,78 @@ It basically works like that :
 
 var morphObject = {
     elem : {
-        $workshop_trigger : $("#workshop_trigger"),
-        $workshop_container : $(".EXPworkshop-container"),
-        $about_trigger : $("#about_trigger"),
-        $about_container : $(".EXPabout-container"),       
         $grid_content : $(".grid-content"),
         $footer_main : $("#footer-main"),
         $slim : $(".slim"),
-        $caption : $(".caption_out")
+        $caption : $(".caption_out"),
+        
+        workshop_object : {
+            $trigger : $("#workshop_trigger"),
+            $container : $(".EXPworkshop-container"),
+            $button : $("#workshop_button"),
+            height: 50,
+            width: 158
+        },
+        
+        about_object : {
+            $trigger : $("#about_trigger"),
+            $container : $(".EXPabout-container"),
+            $button : $("#about_button"),
+            height: 52,
+            width: 128
+        }
     },
     
     morph : function() {
-        // - 7 and - 20 are arbitrary.
-        var total_offset_left_workshop = parseInt($(".intro").css("padding-left").replace("px", "")) + morphObject.elem.$workshop_trigger.offset().left - 7,
-            total_offset_left_about = parseInt($(".intro").css("padding-left").replace("px", "")) + morphObject.elem.$about_trigger.offset().left - 20;
+        // - 7 and - 22 are arbitrary.
+        var total_offset_left_workshop = parseInt($(".intro").css("padding-left").replace("px", "")) + morphObject.elem.workshop_object.$trigger.offset().left - 7,
+            total_offset_left_about = parseInt($(".intro").css("padding-left").replace("px", "")) + morphObject.elem.about_object.$trigger.offset().left - 22;
         
         //setting up the workshop and about container
-        morphObject.elem.$workshop_container.css( {
-            top: morphObject.elem.$workshop_trigger.offset().top,
-            left: total_offset_left_workshop,
-            height : "50px",
-            width: "160px"
-        });
+        //REF 1
+        Utils.setupContainer(morphObject.elem.workshop_object.$container, morphObject.elem.workshop_object.$trigger, morphObject.elem.workshop_object.height, morphObject.elem.workshop_object.width, total_offset_left_workshop);
         
-        morphObject.elem.$about_container.css( {
-            top: morphObject.elem.$about_trigger.offset().top,
-            left: total_offset_left_about,
-            height : "50px",
-            width: "130px"
-        });
+        Utils.setupContainer(morphObject.elem.about_object.$container, morphObject.elem.about_object.$trigger, morphObject.elem.about_object.height, morphObject.elem.about_object.width, total_offset_left_about);
+        
         
         //Click on trigger events : workshop then about
-        morphObject.elem.$workshop_trigger.click(function() {
-            morphObject.elem.$workshop_container.addClass("open");
-            
+        morphObject.elem.workshop_object.$trigger.click(function() {
+            morphObject.elem.workshop_object.$container.addClass("open");
+            $(".close-cross").css("opacity", 1);
             displayProjects.init();
             
-            morphObject.elem.$workshop_container.css( {
-                top: 0,
-                left: 0,
-                height: "100%",
-                width: "100%",
-                background: "white",
-                "z-index": 100
-            });
+            //REF 2
+            Utils.morphOn(morphObject.elem.workshop_object.$container, morphObject.elem.workshop_object.$button, morphObject.elem.workshop_object.$trigger);
+                        
+            //REF 3
+            Utils.setBackgroundWhite(morphObject.elem.workshop_object.$container)
             
             morphObject.elem.$grid_content.css("opacity", 1);
             morphObject.elem.$caption.css("opacity", 1);
         })
         
-        morphObject.elem.$about_trigger.click(function() {
-            morphObject.elem.$about_container.addClass("open");
+        morphObject.elem.about_object.$trigger.click(function() {
+            morphObject.elem.about_object.$container.addClass("open");
+            morphObject.elem.$slim.css( {
+                "transform" : "scale(1)",
+                "opacity" : 1
+            });
+            $(".close-cross").css("opacity", 1);
             morphObject.elem.$footer_main.hide();
             
-            morphObject.elem.$about_container.css({
-                top: 0,
-                left: 0,
-                height: "100%",
-                width: "100%",
-                background: "white",
-                "z-index": 100
-            });
             
-            morphObject.elem.$slim.show().css("opacity", 1);
+            Utils.morphOn(morphObject.elem.about_object.$container, morphObject.elem.about_object.$button, morphObject.elem.about_object.$trigger);
+            
+            //specific style applied here when morphOn is called
+            morphObject.elem.about_object.$button.css( {
+                "padding-top" : "4px",
+                "letter-spacing" : "1px",
+                "margin-left" : "-6px"
+            });
+
+            
+            Utils.setBackgroundWhite(morphObject.elem.about_object.$container);
+            
             morphObject.elem.$caption.css("opacity", 1);
         })
         
@@ -87,40 +96,41 @@ var morphObject = {
             if($(this).data("target") === "workshop") {                
                 morphObject.elem.$grid_content.css("opacity", 0);
                 morphObject.elem.$caption.css("opacity", 0);
+                $(this).css("opacity", 0);
                 
+                //REF 4
+                Utils.morphOff(_parent, morphObject.elem.workshop_object, total_offset_left_workshop);
+            
+                //This has not been refactored
                 setTimeout(function() {
-                    _parent.css({
-                        top: morphObject.elem.$workshop_trigger.offset().top,
-                        left: total_offset_left_workshop,
-                        height : "50px",
-                        width: "160px",
-                        "z-index": -10                
-                    });                    
-                }, 1000);
-                
-                setTimeout(function() {
+                    _parent.css( {
+                        "z-index" : -10,
+                        "background" : "rgba(0,0,0,0)"
+                    });
+                    
                     $(".grid").children().remove();
-                }, 950);
-                
+                }, 1200);
+                //END
+                                
             }
             else {                
                 morphObject.elem.$slim.css("opacity", 0);
                 morphObject.elem.$caption.css("opacity", 0);
                 morphObject.elem.$footer_main.show();
+                $(this).css("opacity", 0);
                 
+                Utils.morphOff(_parent, morphObject.elem.about_object, total_offset_left_about);
+                                                
                 setTimeout(function() {
-                    _parent.css({ 
-                        top: morphObject.elem.$about_trigger.offset().top,
-                        left: total_offset_left_about,
-                        height : "50px",
-                        width: "150px",
-                        "z-index": -10
+                    _parent.css( {
+                        "z-index" : -10,
+                        "background" : "rgba(0,0,0,0)"
                     });
-                }, 1000);
-                
-                setTimeout(function() {
-                    morphObject.elem.$slim.hide();
-                }, 1100);
+                    
+                    morphObject.elem.$slim.css( {
+                        "transform" : "scale(0)"
+                    });
+                }, 1200);    
             }
             
             //changes the background every time we close a panel.
@@ -175,14 +185,14 @@ var particlesSection = {
     },
     
     init: function() {        
-        $('#particles').particleground({
-            dotColor: '#fff8e3',
-            lineColor: '#fff8e3', 
-            density: 19000,
-            particleRadius: 5,
-            curvedLines: true,
-            parallaxMultiplier: 10
-        });
+//        $('#particles').particleground({
+//            dotColor: '#fff8e3',
+//            lineColor: '#fff8e3', 
+//            density: 19000,
+//            particleRadius: 5,
+//            curvedLines: true,
+//            parallaxMultiplier: 10
+//        });
     }
 }
 
@@ -198,7 +208,70 @@ var Utils = {
     //from : http://stackoverflow.com/a/6680877
     trailingSlash : function(link) {
         return link.replace(/\/$/, "");
-    } 
+    }, 
+    
+    setupContainer : function(container, trigger, height, width, left) {
+        container.css( {
+            top : trigger.offset().top,
+            left : left + "px",
+            height : height + "px",
+            width : width
+        });
+    },
+    
+    morphOn : function(container, button, trigger) {
+        container.css( {
+            top: 0,
+            left: 0,
+            height: "100%",
+            width: "100%",
+            "z-index": 100
+        });
+
+        //basic style to be applied : if more be specific when invoking the function
+        button.css( {
+            "letter-spacing" : "0.015em",
+            "font-size" : "35px",
+            "font-weight" : "bold",
+            "line-height" : "35px"
+        });
+
+        trigger.addClass("transparent");
+
+    },
+    
+    morphOff : function(parent, container_object, left ) {
+        setTimeout(function() {
+            parent.css( {
+                top : container_object.$trigger.offset().top,
+                left: left,
+                height : container_object.height + "px",
+                width : container_object.width + "px"
+            });
+
+            container_object.$trigger.focus();
+
+            container_object.$button.css( {
+                "letter-spacing" : "0.015em",
+                "font-size" : "18px",
+                "font-weight" : 700,
+                "line-height" : 1
+            })
+        }, 1000);
+
+        setTimeout(function() {
+            container_object.$trigger.removeClass("transparent");
+        }, 1700);
+        
+    },
+    
+    setBackgroundWhite : function(container) {
+        setTimeout(function() {
+            container.css( {
+                background : "white"
+            })
+        }, 300);
+    }
 }
 
 $(document).ready(function() {
