@@ -1,6 +1,9 @@
-Redesign of hangup, personal portfolio.
+<h1>Hang Up</h1>
 
-Initially at hangup.herokuapp.com
-
+<h3>Redesign of hangup.herokuapp.com </h3>
 _______________
-Initial commit
+Initial commit on Sep 29, 2014
+
+<hr>
+
+Experienced with html, css, js, jquery, sass, less, gruntjs, Illustrator, Photoshop, ...
