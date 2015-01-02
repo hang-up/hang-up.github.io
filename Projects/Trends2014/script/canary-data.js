@@ -36,7 +36,7 @@ var Music = Object.create(Data, {
     },
     
     entity_3 : {
-        value: new Entity("Fancy feat Charli XCX", "Iggy Azalea", "ressource/fancy.jpg", "http://www.youtube.com/watch?v=O-zpOMYRi0w"),
+        value: new Entity("Fancy", "Iggy Azalea FT Charli XCX", "ressource/fancy.jpg", "http://www.youtube.com/watch?v=O-zpOMYRi0w"),
         enumerable: true
     },
     
