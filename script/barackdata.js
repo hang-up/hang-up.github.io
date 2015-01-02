@@ -45,7 +45,7 @@ var Projects = Object.create(Data, {
     },
     
     entity_5 : {
-        value : new Entity("Trends Of2014", "Projects/Trends/thumb.jpg", "Projects/Trends/index.html", "2014 was a year of expectations. <br/> Here are its biggest trends." ),
+        value : new Entity("Trends Of2014", "Projects/Trends2014/thumb.jpg", "Projects/Trends2014/index.html", "2014 was a year of expectations. <br/> Here are its biggest trends." ),
         enumerable : true
     }
 });
