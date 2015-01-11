@@ -67,6 +67,9 @@ var morphObject = {
         morphObject.elem.about_object.$trigger.click(function() {
             morphObject.elem.about_object.$container.addClass("open");
             morphObject.elem.$slim.css( {
+                "-moz-transform" : "scale(1)",
+                "-webkit-transform" : "scale(1)",
+                "-ms-transform" : "scale(1)",
                 "transform" : "scale(1)",
                 "opacity" : 1
             });
@@ -128,6 +131,9 @@ var morphObject = {
                     });
                     
                     morphObject.elem.$slim.css( {
+                        "-moz-transform" : "scale(0)",
+                        "-webkit-transform" : "scale(0)",
+                        "-ms-transform" : "scale(0)",
                         "transform" : "scale(0)"
                     });
                 }, 1200);    
