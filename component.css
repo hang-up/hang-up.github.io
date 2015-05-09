@@ -251,3 +251,14 @@ figure.effect-romeo:hover p {
 	-ms-transform: rotate(-45deg);
 	    transform: rotate(-45deg);
 }
+
+/*
+Profile Pic
+*/
+#profile_pic {
+    border-radius: 100px;
+    text-align: center;
+    margin: -40px auto 35px;
+    display: block;
+    height: 127px;
+}

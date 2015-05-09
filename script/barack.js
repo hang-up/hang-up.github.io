@@ -282,6 +282,6 @@ var Utils = {
 
 $(document).ready(function() {
     morphObject.init();
-    particlesSection.init();
+//    particlesSection.init();
 })
 
