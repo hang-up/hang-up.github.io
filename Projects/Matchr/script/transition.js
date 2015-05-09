@@ -93,7 +93,7 @@ $(document).ready(function () {
             "opacity": 0
         }, 1500, "swing", function () {
             $(this).remove();
-            $('body').append("<div id='color-canvas'><p class='caption top-padding'  id=indicator>Start by moving the mouse... <br /> Double click to save a color <br /> (Ipad/Ipod and any kind of full touch devices are not supported ... yet. I know it's lame.)</p><p id='color-code'></p></div>");
+            $('body').append("<div id='color-canvas'><p id='color-code'></p></div>");
             $("#action-bar").fadeIn();
         });
     });
@@ -121,9 +121,7 @@ $(document).ready(function () {
     
     //Main event : the mouse is always moving!!
     $("body").on('mousemove', "#color-canvas", function (e) {     
-        
-        //remove the "Move the mouse around" paragraph
-        $("#indicator").remove();
+
         
         hue = Math.floor(e.pageX / ($('body').width() / 361));
         ligth = Math.floor(e.pageX / ($('body').width() / 101));
@@ -155,7 +153,7 @@ $(document).ready(function () {
                 margin+=15.8;
                 numberPalette++;
                 
-                $("#action-bar li:nth-child(2)").fadeIn();
+                $("#action-bar li:nth-child(2)").fadeIn().css("display", "inline-block");
                 
                 e.stopImmediatePropagation();
             }            

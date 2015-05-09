@@ -7,6 +7,7 @@ body, html {
     margin: 6.75% auto;
 }
 
+
 .center-box label {
     display: block;
     font-family: "Open Sans", arial, sans-serif;
@@ -28,38 +29,48 @@ body, html {
     display: block;
     margin-top: 2.5em;
     padding: 1.5em;
-    width: 92%;
     border: none;
     margin-left: auto;
     margin-right: auto;
-    background: #E75854;
-    color: #f9f6e5;
+    color: #f2f2f2;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 300;
     cursor: pointer;
+    -webkit-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
 }
 
-.button-round {
-    padding: 20px;
-    height: 70px;
-    width: 70px;
-    margin: 2% auto 0 auto;
+.button:hover, .button:active, .button:focus {
+    color: #f2f2f2;
+    border-color: rgba(0, 0, 0, 0);
+    background: #888;
+}
+
+.button-start {
     display: block;
-    border-radius: 50%;
-    border: 1px solid #A75265;
-    
-    background-color: #fff;
-    color: #231F20;
-    font-family: "Open Sans", arial, sans-serif;
-        
+    padding: 10px 25px;
+    font-family: "News Cycle", "Open Sans", arial, sans-serif;
+    border: 1px solid #888;
+    text-transform: uppercase;
+    letter-spacing: 0.015em;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #888;
+    text-decoration: none;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
     cursor: pointer;
-    outline: 0;
-    
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -ms-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+    margin: 30px auto;
+    background: #fff;
+}
+
+#button-start:hover, #button-start:active, #button-start:focus {
+    color: #FFF;
+    border-color: rgba(0, 0, 0, 0);
+    background: -webkit-linear-gradient(left, rgb(246, 177, 73), rgb(248, 87, 45), rgb(223, 42, 51), rgb(162, 37, 67), rgb(107, 49, 45));
+    background: linear-gradient(to right, rgb(246, 177, 73), rgb(248, 87, 45), rgb(223, 42, 51), rgb(162, 37, 67), rgb(107, 49, 45));
 }
 
 
@@ -87,7 +98,11 @@ body, html {
     font-size: 18px;
     font-weight: 300;
     color: #63666a;
-    line-height: 1.375;
+    line-height: 1.5;
+}
+
+.small {
+    font-size: 13px;
 }
 
 .top-padding {
@@ -182,9 +197,7 @@ body, html {
 }
 
 
-/*  style for load/save icons (inspired by http://oceancohen.tumblr.com/post/47390713866/rethinking-the-save-symbol) */
 #action-bar {
-    background: rgba(0,0,0,0.3);   
     border-radius: 6px;
     display: none;
     
@@ -195,43 +208,32 @@ body, html {
 
 #action-bar li {
     display: inline-block;
-    padding: 3px 3px 0px 10px;
-    height: 48px;
-    border-radius: 8px;
-    
-    font-family: "Open Sans", arial, sans-serif;
-    font-size: small;
-    font-weight: 400;
-    color: #fff;
-    
-    cursor: pointer;
+    padding: 10px 25px;
+    font-family: "News Cycle", "Open Sans", arial, sans-serif;
+    border: 1px solid #FFF;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #FFF;
+  text-decoration: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+    margin: 10px
 }
 
-#action-bar li:nth-child(1) img {
-    margin-left: -4px;
-    padding: 2px;
+#action-bar li:hover, #action-bar li:active, #action-bar:focus {
+    color: #888;
+  border-color: rgba(0, 0, 0, 0);
+  background: #FFF;
 }
-
-#action-bar li:nth-child(2) {
-    display: none;
-}
-
-#action-bar li:nth-child(2) img {
-    margin-left: -10px;
-    padding: 2px;
-}
-
-
-#action-bar li img {
-    margin-bottom: 5px;
-}
-
-
 
 
 /* Style for Load / Save panel */
 #color-save-box, #color-load-box {
-    background: #fef0e3;
+    background: #F2F2F2;
     padding-bottom: 1%;
      
     position: absolute;
@@ -254,7 +256,7 @@ body, html {
     text-align: center;
     font-weight: 300;
     font-size: 3.5em;
-    color: #e75854;
+    color: #888;
 }
 
 #color-save-box input {
@@ -272,8 +274,6 @@ body, html {
     outline: none;
 
     -webkit-transition: background-color 0.2s ease-out;
-    -moz-transition: background-color 0.2s ease-out;
-    -o-transition: background-color 0.2s ease-out;
     transition: background-color 0.2s ease-out;
 }
 
