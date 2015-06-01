@@ -20,17 +20,17 @@ var Data = {
 
 var Projects = Object.create(Data, {
     entity_0 : {
-        value : new Entity("Diamond ", "Projects/Art_Diamond/diamond_thumb.png", "Projects/Art_Diamond/diamond.png", "A diamond is forever. <br/> An essay made with Illustrator."),
+        value : new Entity("Matchr ", "Projects/Matchr/template_thumb.png", "Projects/Matchr/index.html", "<br>Matching colors made easy." ),
         enumerable : true
     },
     
     entity_1 : {
-        value : new Entity("Made InFrance", "Projects/Art_France/thumb.png", "Projects/Art_France/made_in_france.png", "Made in France on my way to Montreal."),
+        value : new Entity("Trends Of2014", "Projects/Trends2014/thumb.jpg", "Projects/Trends2014/index.html", "2014 was a year of expectations. <br/> Here are its biggest trends." ),
         enumerable : true
     },
     
     entity_2 : {
-        value : new Entity("Hamburger ", "Projects/Icon_Hamburger/Hambuger_thumb.png", "Projects/Icon_Hamburger/Hambuger.png", "<br/>Who said burgers weren't sexy?" ),
+        value : new Entity("Solar ", "Projects/Solar/thumb.png", "Projects/Solar/index.html", "To the sky and beyond" ),
         enumerable : true
     },
     
@@ -40,17 +40,17 @@ var Projects = Object.create(Data, {
     },
     
     entity_4 : {
-        value : new Entity("Matchr ", "Projects/Matchr/template_thumb.png", "Projects/Matchr/index.html", "<br>Matching colors made easy." ),
+        value : new Entity("Diamond ", "Projects/Art_Diamond/diamond_thumb.png", "Projects/Art_Diamond/diamond.png", "A diamond is forever. <br/> An essay made with Illustrator."),
         enumerable : true
     },
-    
+
     entity_5 : {
-        value : new Entity("Trends Of2014", "Projects/Trends2014/thumb.jpg", "Projects/Trends2014/index.html", "2014 was a year of expectations. <br/> Here are its biggest trends." ),
+        value : new Entity("Made InFrance", "Projects/Art_France/thumb.png", "Projects/Art_France/made_in_france.png", "Made in France on my way to Montreal."),
         enumerable : true
     },
     
     entity_6 : {
-        value : new Entity("Solar ", "Projects/Solar/thumb.png", "Projects/Solar/index.html", "To the sky and beyond" ),
+        value : new Entity("Hamburger ", "Projects/Icon_Hamburger/Hambuger_thumb.png", "Projects/Icon_Hamburger/Hambuger.png", "<br/>Who said burgers weren't sexy?" ),
         enumerable : true
     }
 });
