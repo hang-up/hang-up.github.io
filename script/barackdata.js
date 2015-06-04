@@ -20,7 +20,7 @@ var Data = {
 
 var Projects = Object.create(Data, {
     entity_0 : {
-        value : new Entity("Matchr ", "Projects/Matchr/template_thumb.png", "Projects/Matchr/index.html", "<br>Matching colors made easy." ),
+        value : new Entity("Matchr ", "Projects/Matchr/template_thumb.png", "Projects/Matchr/index.html", "Matching colors made easy." ),
         enumerable : true
     },
     
