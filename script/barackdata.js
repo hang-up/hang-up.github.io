@@ -25,7 +25,7 @@ var Projects = Object.create(Data, {
     },
     
     entity_1 : {
-        value: new Entity("AdBlockr", "Projects/Blockr/template_thumb.png", "https://github.com/hang-up/adblockr", "Why so selfish?"),
+        value: new Entity("AdBlockr ", "Projects/Blockr/template_thumb.png", "https://github.com/hang-up/adblockr", "Why so selfish?"),
         enumerable: true
     },
     
