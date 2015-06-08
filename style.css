@@ -37,7 +37,7 @@ body {
 }
 
 #footer-about {
-    padding-top: 60px;
+    padding-top: 160px;
 }
 
 .footer p {
@@ -119,7 +119,7 @@ body {
     letter-spacing: 0.015em;
 }
 .caption {
-    margin: 20px 0 60px 0;
+    margin: 50px 0 50px 0;
     text-align: center;
 }
 
@@ -346,21 +346,22 @@ p {
         padding: 0 2em;
     }
     
-/*
-    .footer {
-        margin-top: 767px;
+    #footer-about {
+        padding-top: 60px;
     }
-*/
     
 }
 
 @media only screen and (max-width: 320px) {
-  h1 {
-    font-size: 28px;
-  }
-  h1::after {
-    height: 4px;
-  }
+    h1 {
+        font-size: 28px;
+    }
+    h1::after {
+        height: 4px;
+    }
+    #footer-about {
+        padding-top: 60px;
+    }
 }
 
 /* ANIMATION */

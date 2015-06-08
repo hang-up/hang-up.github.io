@@ -229,7 +229,7 @@ var Utils = {
         container.css( {
             top: 0,
             left: 0,
-            height: "100%",
+            height: "200%",
             width: "100%",
             "z-index": 100
         });
@@ -282,6 +282,6 @@ var Utils = {
 
 $(document).ready(function() {
     morphObject.init();
-    particlesSection.init();
+//    particlesSection.init();
 })
 
