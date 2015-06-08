@@ -352,6 +352,12 @@ p {
     
 }
 
+@media only screen and (max-width: 360px) {
+    .EXPabout-container.open {
+        height: 250% !important;
+    }
+}
+
 @media only screen and (max-width: 320px) {
     h1 {
         font-size: 28px;
@@ -362,6 +368,10 @@ p {
     #footer-about {
         padding-top: 60px;
     }
+    .EXPabout-container.open {
+        height: 300% !important;
+    }
+
 }
 
 /* ANIMATION */
