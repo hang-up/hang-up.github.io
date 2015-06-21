@@ -154,7 +154,8 @@ body {
 }
 
 .EXPabout-container a {
-    text-decoration: underline;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #000;
 }
 
 /* TOOLS */
