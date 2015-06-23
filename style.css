@@ -287,6 +287,10 @@ p {
     figure.effect-romeo h2 {
         font-size: 1em;
     }
+    
+    .grid {
+        width: 50%;
+    }
 }
 
 
