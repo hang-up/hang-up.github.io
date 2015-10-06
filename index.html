@@ -1,105 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <title>Hang Up - Home</title>
-    
-    <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/component.css">
-    <link rel="stylesheet" href="style/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato|Wire+One|News+Cycle|Playfair+Display:700italic|Merriweather' rel='stylesheet' type='text/css'>    
-    <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <title>Hang Up</title>
+
+  <link rel="stylesheet" href="dist/semantic.min.css">
+  <link rel="stylesheet" href="dist/app.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Abel|Playfair+Display:700italic|Oswald|Quattrocento' rel='stylesheet' type='text/css'>
+
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 
-<body id="home">
-    <!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <div id="particles">
-        <div class="intro">  
-            <h1 class="title1 big white">Hang Up <span class="animated bounce infinite">!</span></h1>
-            <p class="caption xsmall white">A workshop for ideas.</p>
-            <a class="btn" href="#" id="workshop_trigger">Workshop</a>
-            <a class="btn" href="#" id="about_trigger">Hello !</a>
+<body>
+  <!--[if lt IE 8]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="homepage-container">
+    <div class="homepage-content">
+
+      <div class="ui container">
+        <video autoplay loop muted poster="" id="bgvid">
+          <source src="asset/fall.mp4" type="video/mp4">
+          </video>
+
+          <div class="ui grid">
+
+            <!-- Logo row -->
+            <div class="row">
+              <div class="sixteen wide column center aligned">
+                <img src="asset/logo.png" alt="Hang Up!" id="homepage-content-logo" class="ui centered large image" />
+              </div>
+            </div>
+
+            <!-- Buttons row -->
+            <div class="two column row">
+              <div class="column right aligned">
+                <button
+                class="ui basic button sharp uppercase"
+                id="homepage-workshop-trigger"
+                data-container=".workshop-container"
+                data-content=".workshop-content"
+                >
+                Workshop
+              </button>
+            </div>
+
+            <div class="column left aligned">
+              <button
+              class="ui basic button sharp uppercase"
+              id="homepage-about-trigger"
+              data-container=".about-container"
+              data-content=".about-content"
+              >
+              Hello!
+            </button>
+          </div>
         </div>
+
+      </div>
+      <!-- End of grid -->
     </div>
-<!--    </particles>-->
-    
-    
-    <div class="EXPworkshop-container">
-        <h1 class="title1 small gray morphable" id="workshop_button">WORKSHOP</h1>
-        <p class="caption xsmall morphable caption_out">Here's to the amazing.</p>
-        
-        <div class="grid-content" >                    
-            <div class="grid" id="1">
-            </div>
-            <div class="grid" id="2">
-            </div>
-            <div class="grid" id="3">
-            </div>
-            
-            <div class="footer" style="background: #fff" id="footer-workshop">
-                <p class="displayOn title-caption" id="footer-title">Do you have time for a tea? </p> 
-                <p class="displayOn title-caption" style="font-size : 1em; padding-bottom: 4%; color: #c2c2c2">Drop me a line <a href="mailto:hello@hangontie.co" style="color: #888; text-decoration: underline;">here!</a> <br/><br/> Montreal. 2015.</p>
+    <!-- End of container -->
+  </div>
+  <!-- Homepage content -->
+</div>
+<!-- Homepage container -->
+
+<div class="workshop-container">
+  <div class="workshop-content">
+
+
+    <div class="ui container grid">
+      <div class="row header">
+        <div class="sixteen wide column text-center">
+
+          <span
+          class="pull-right close-cross"
+          data-container=".workshop-container"
+          data-content=".workshop-content"
+          data-trigger="#homepage-workshop-trigger"
+          >
+          &#10005;
+        </span>
+
+        <h1 class="content header">Workshop</h1>
+        <div class="tiny divider black"></div>
+        <p class="content sub header">Handcrafted digitals.</p>
+      </div>
     </div>
+  </div>
+
+  <div class="ui grid" id="workshop-grid">
+
+  </div>
+
+</div>
+
+
+</div>
+
+
+<div class="about-container">
+
+  <div class="transition-layer">
+
+    <div class="about-content">
+
+      <div class="ui container grid">
+        <div class="row header">
+          <div class="sixteen wide column text-center">
+
+            <span
+            class="pull-right close-cross"
+            data-container=".about-container"
+            data-content=".about-content"
+            data-trigger="#homepage-about-trigger"
+            >
+            &#10005;
+          </span>
+
+          <h1 class="content header">Hello!</h1>
+
+
+
+          <div class="tiny divider black"></div>
+          <p class="content sub header">I am Robert, a (green) tea addict web developer.</p>
+
         </div>
-        
-        <span class="close-cross" data-target="workshop"></span>
-    </div>
-    
-    <div class="EXPabout-container">
-        <h1 class="title1 small gray morphable" id="about_button">Hello!</h1>
-        <p class="caption xsmall morphable caption_out">I am Robert, a tea addict web developper.</p>
-    
-        <div class="slim" style="-webkit-transform:scale(0); -moz-transform:scale(0); -ms-transform:scale(0); transform:scale(0)">
-            <img class="morphable" id="profile_pic" src="profile_alternate.jpg">
-            <p>I craft digital experiences to amaze people.</p>
-            <br/>
-            <p>But seriously, I am just a guy with a keen eye on design who likes to code way too much.</p>
-            <p>I specialize in front end development, although I know stuff about what’s happening in the back. </p>
-            <br/>
-            <p>Bonding people and technology together is what motivates me into drinking too much tea. </p>
-            <br/>
-            <p>I also give back to the community by being a volunteer at <a href="http://ladieslearningcode.com">Ladies Learning Code</a> during my free time.</p>
-            <br/>
-            <p>Finally, I like taking <a href="http://hangontie.co">pictures</a>.</p>
+      </div>
 
-            <div class="footer" style="background: #fff" id="footer-about">
-                <p class="displayOn title-caption" id="footer-title">Do you have time for a tea? </p> 
-                <p class="displayOn title-caption" style="font-size : 1em; padding-bottom: 4%; color: #c2c2c2">Drop me a line <a href="mailto:hello@hangontie.co" style="color: #888;">here!</a> <br/><br/> Montreal. 2015.</p>
-            </div>
+      <div class="row">
+        <div class="ui small circular centered image ">
+          <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/11750611_10207630842389696_1834578718267128175_n.jpg?oh=2a55a4b4affd95fe6dc399bc34675f32&oe=56A8FFF4" alt="" />
         </div>
-        
-        <span class="close-cross" data-target="about"></span>
+
+        <div class="ui text container">
+          <p>Based out in Montreal, Poutine is my favorite word. I'll eat it while trying to create digital experiences to amaze people.</p>
+          <p>But seriously, other than this obsessive thought about how to make poutine and green tea play well together, I am just a regular guy with a keen eye on design who likes to code way too much. <br/> I specialize in front end development, although I know stuff about what’s happening in the back.</p>
+          <p>Bonding people and technology together is my motto behind every work I start. </p>
+          <p>During my free time I am a volunteer at <a class="external-link" href="http://ladieslearningcode.com" target="_blank">Ladies Learning Code</a>. I also play tennis, skate on my pennyboard, take pictures, eat (too much) and travel (not enough).</p>
+
+          <h5>Follow me on: </h5>
+          <div class="ui horizontal list">
+
+            <div class="item">
+              <img src="asset/instagram.png" class="ui avatar image" />
+              <div class="content">
+                <div class="header">
+                  <a
+                  class="external-link" href="https://instagram.com/bobhang/" target="_blank">Instagram</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="asset/linkedin.png" class="ui avatar image" />
+              <div class="content">
+                <div class="header">
+                  <a class="external-link" href="https://ca.linkedin.com/pub/robert-hang/42/629/84a" target="_blank">LinkedIn</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 3rem">
+        <div class="ui text container">
+          <div class="text-center">
+            <p id="footer-title">
+              Do you have time for a tea?
+            </p>
+            <p>Drop me a line <a href="mailto:hello@hangontie.co" style="color: #888;">here!</a> <br/><br/> Montreal. 2015.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    
-    <div class="footer" style="background: #fff" id="footer-main">
-        <p class="displayOn title-caption" id="footer-title">Do you have time for a tea? </p> 
-        <p class="displayOn title-caption" style="font-size : 1em; padding-bottom: 4%; color: #c2c2c2">Drop me a line <a href="mailto:hello@hangontie.co" style="color: #888; text-decoration: underline">here!</a> <br/><br/> Montreal. 2015.</p>
-    </div>
-<!--    </footer>-->
+    <!-- .ui .container .grid -->
+  </div>
+  <!-- About content -->
+</div>
+<!-- Transition layer -->
+</div>
+<!-- About container -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-    
-    <script src="script/barack.js"></script>    
-    <script type="text/javascript" src="script/jquery.particleground.min.js"></script>
-    <script src="script/barackdata.js"></script>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<footer>
+  <div class="text-center">
+    <p id="footer-title">
+      Do you have time for a tea?
+    </p>
+    <p>Drop me a line <a href="mailto:hello@hangontie.co" style="color: #888;">here!</a> <br/><br/> Montreal. 2015.</p>
+  </div>
+</footer>
 
-      ga('create', 'UA-63797430-1', 'auto');
-      ga('send', 'pageview');
 
-    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="script/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+<script src="script/vendor/dimmer.js" charset="utf-8"></script>
+<script src="script/vendor/transit.js" charset="utf-8"></script>
+
+<!-- React components -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js" charset="utf-8"></script>
+
+<script src="dist/valet.min.js" charset="utf-8"></script>
 </body>
 </html>
