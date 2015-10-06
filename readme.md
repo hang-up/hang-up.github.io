@@ -16,6 +16,11 @@ It is built using (non exhaustive list):
 * *Create a dedicated page for each project*
 
 
+#### Milestones
+* 2nd iteration: Sep 29, 2014
+* 3rd iteration: Oct 5, 2015
+
+
 [React]:https://facebook.github.io/react/
 [Semantic-UI]:http://semantic-ui.com
 [Transit]:http://ricostacruz.com/jquery.transit/
