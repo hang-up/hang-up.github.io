@@ -134,6 +134,7 @@ video#bgvid {
 
 .about-container {
   overflow-y: auto;
+  background: #fff;
 }
 
 .workshop-content, .about-content {

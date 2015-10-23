@@ -2,3 +2,7 @@
 node_modules
 *.log
 *.gz
+
+# Ignore semantic files
+/style/semantic
+.DS_Store
