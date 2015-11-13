@@ -2,10 +2,11 @@
 
 This is the third iteration on my personal portfolio. It features past, current and maybe future projects that I am working on!
 
-It is built using (non exhaustive list):
+Here is a list of some of the technologies it uses:
 * Classic HTML / CSS
 * Vanilla Javascript with a touch of jQuery for DOM interaction
-* [React] for displaying workshop items.
+* [React]
+* Babel (browser.js) to transform JSX bits into regular ES5 js.
 * [Semantic-UI] to harmonize the main layout
 * [Transit] to harness powerful smooth animation
 * Gulp as a task runner.
@@ -18,8 +19,7 @@ It is built using (non exhaustive list):
 
 #### Milestones
 * 2nd iteration: Sep 29, 2014
-* 3rd iteration: Oct 5, 2015
-
+* 3rd iteration: Oct 5, 2015  
 
 [React]:https://facebook.github.io/react/
 [Semantic-UI]:http://semantic-ui.com

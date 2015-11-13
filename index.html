@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,101 +10,51 @@
 
   <title>Hang Up</title>
 
-  <link rel="stylesheet" href="dist/semantic.min.css">
   <link rel="stylesheet" href="dist/app.min.css">
+  <link rel="stylesheet" href="dist/semantic.min.css">
+  <link rel="stylesheet" href="style/animate.css">
   <link href='https://fonts.googleapis.com/css?family=Abel|Playfair+Display:700italic|Oswald|Quattrocento' rel='stylesheet' type='text/css'>
 
   <!--[if IE]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
-
 <body>
   <!--[if lt IE 8]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
   <div class="homepage-container">
-    <div class="homepage-content">
+  </div>
 
-      <div class="ui container">
-        <video autoplay loop muted poster="asset/fall.jpg" id="bgvid">
-          <source src="asset/fall.mp4" type="video/mp4">
-          </video>
+  <div class="workshop-container">
+    <div class="workshop-content">
 
-          <div class="ui grid">
+      <div class="ui container grid">
+        <div class="row header">
+          <div class="sixteen wide column text-center">
 
-            <!-- Logo row -->
-            <div class="row">
-              <div class="sixteen wide column center aligned">
-                <img src="asset/logo.png" alt="Hang Up!" id="homepage-content-logo" class="ui centered large image" />
-              </div>
-            </div>
+            <span
+            class="pull-right close-cross"
+            data-container=".workshop-container"
+            data-content=".workshop-content"
+            data-trigger="#homepage-workshop-trigger"
+            >
+            &#10005;
+          </span>
 
-            <!-- Buttons row -->
-            <div class="two column row">
-              <div class="column right aligned">
-                <button
-                class="ui basic button sharp uppercase"
-                id="homepage-workshop-trigger"
-                data-container=".workshop-container"
-                data-content=".workshop-content"
-                >
-                Workshop
-              </button>
-            </div>
-
-            <div class="column left aligned">
-              <button
-              class="ui basic button sharp uppercase"
-              id="homepage-about-trigger"
-              data-container=".about-container"
-              data-content=".about-content"
-              >
-              Hello!
-            </button>
-          </div>
+          <h1 class="content header">Workshop</h1>
+          <div class="tiny divider black"></div>
+          <p class="content sub header">Handcrafted digitals.</p>
         </div>
-
-      </div>
-      <!-- End of grid -->
-    </div>
-    <!-- End of container -->
-  </div>
-  <!-- Homepage content -->
-</div>
-<!-- Homepage container -->
-
-<div class="workshop-container">
-  <div class="workshop-content">
-
-
-    <div class="ui container grid">
-      <div class="row header">
-        <div class="sixteen wide column text-center">
-
-          <span
-          class="pull-right close-cross"
-          data-container=".workshop-container"
-          data-content=".workshop-content"
-          data-trigger="#homepage-workshop-trigger"
-          >
-          &#10005;
-        </span>
-
-        <h1 class="content header">Workshop</h1>
-        <div class="tiny divider black"></div>
-        <p class="content sub header">Handcrafted digitals.</p>
       </div>
     </div>
+
+    <div class="ui grid" id="workshop-grid">
+
+    </div>
+
   </div>
-
-  <div class="ui grid" id="workshop-grid">
-
-  </div>
-
-</div>
-
 
 </div>
 
@@ -206,15 +156,12 @@
 </footer>
 
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="script/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 <script src="script/vendor/dimmer.js" charset="utf-8"></script>
 <script src="script/vendor/transit.js" charset="utf-8"></script>
-
-<!-- React components -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js" charset="utf-8"></script>
-
 <script src="dist/valet.min.js" charset="utf-8"></script>
 </body>
 </html>

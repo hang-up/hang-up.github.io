@@ -20,6 +20,10 @@ video#bgvid {
     background-size: cover;
 }
 
+.hidden {
+  display: none;
+}
+
 .sharp {
   border-radius: 0 !important;
 }
@@ -193,7 +197,43 @@ video#bgvid {
 }
 
 
+/*
+  ------------
+  Preloader Style
+  ------------
+*/
+.preloader-wrapper {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
 
+#preloader-topPanel, #preloader-bottomPanel {
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  height: 50%;
+}
+#preloader-topPanel {
+  top: 0;
+}
+#preloader-bottomPanel {
+  top: 50%;
+}
+.preloader-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+}
+
+
+/*
+  ------------
+  Footer style
+  ------------
+*/
 footer, .footer {
   font-family: 'Quattrocento', sans-serif;
   padding: 1rem;

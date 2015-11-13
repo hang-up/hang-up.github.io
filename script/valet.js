@@ -1,14 +1,14 @@
 /**
-* Valet 1.0
+* Valet 1.5
 * http://hang-up.github.io
 *
-*  Date: 2015-09-12
+*  Date: 2015-11-12
 *
 */
 var valet = {
 
   meta: {
-    version: 1.0
+    version: 1.5
   },
 
   /**
@@ -226,7 +226,8 @@ var valet = {
 ; (function(window, document, $) {
   $(document).ready(function() {
 
-    React.render(<WorkshopGrid data={valet.data} />, document.getElementById("workshop-grid"));
+    ReactDOM.render(<HomepageContainer/>, document.getElementsByClassName('homepage-container')[0]);
+    ReactDOM.render(<WorkshopGrid data={valet.data} />, document.getElementById("workshop-grid"));
 
     valet.setTransformOrigin($("#homepage-workshop-trigger"), $(".workshop-container"));
     valet.setTransformOrigin($("#homepage-about-trigger"), $(".about-container"));
