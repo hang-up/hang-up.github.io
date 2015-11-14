@@ -1,4 +1,49 @@
 /**
+* Google Analytics Tracking script
+*
+*/
+var gae = {
+  workshop: function() {
+    $("#homepage-workshop-trigger").on("click", function() {
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Global',
+        eventAction: 'Workshop Trigger',
+      });
+    });
+  },
+
+  about: function() {
+    $("#homepage-about-trigger").on("click", function() {
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Global',
+        eventAction: 'About Trigger',
+      });
+    });
+  },
+
+  projectView: function() {
+    $(".view-project").on("click", function() {
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Global',
+        eventAction: 'Project View',
+        eventLabel: $(this).data("title")
+      });
+    });
+  },
+
+  init: function() {
+    var self = gae;
+    self.workshop();
+    self.about();
+    self.projectView();
+  }
+};
+
+
+/**
 * Valet 1.5
 * http://hang-up.github.io
 *
@@ -233,6 +278,7 @@ var valet = {
     valet.setTransformOrigin($("#homepage-about-trigger"), $(".about-container"));
 
     valet.init();
+    gae.init();
   });
 
 })(window, this.document, jQuery, undefined);

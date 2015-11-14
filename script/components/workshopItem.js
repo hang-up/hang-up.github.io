@@ -11,7 +11,10 @@ var WorkshopItem = React.createClass({
                 <div className="divider"></div>
 
                 <a href={this.props.link} target="_blank">
-                  <button className="ui basic button sharp uppercase white border-white">
+                  <button
+                    className="ui basic button sharp uppercase white border-white view-project"
+                    data-title={this.props.title}
+                  >
                       Learn more
                   </button>
                 </a>
