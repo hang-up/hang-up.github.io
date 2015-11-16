@@ -38,6 +38,14 @@ var HomepageContainer = React.createClass({
     }.bind(this), 3500);
   },
 
+  /**
+  * Once preloader loadingSteps reaches 100, we add the classes hidden and
+  * animated + the desired animation effect (fadeOut).
+  *
+  * When the video can be played (onCanPlay event), we trigger the progressFinish
+  * method that is reponsible for adding the appropriate classes for the prelaoder.
+  * 
+  */
   render: function() {
     return (
       <div className="homepage-content">

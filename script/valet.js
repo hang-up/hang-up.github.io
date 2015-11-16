@@ -271,13 +271,35 @@ var valet = {
 ; (function(window, document, $) {
   $(document).ready(function() {
 
+    /**
+    * Render react components.
+    *
+    */
     ReactDOM.render(<HomepageContainer/>, document.getElementsByClassName('homepage-container')[0]);
     ReactDOM.render(<WorkshopGrid data={valet.data} />, document.getElementById("workshop-grid"));
 
-    valet.setTransformOrigin($("#homepage-workshop-trigger"), $(".workshop-container"));
-    valet.setTransformOrigin($("#homepage-about-trigger"), $(".about-container"));
+    /**
+    * This is hackish I'll admit it... We render everything with React and wait
+    * 100ms just to be sure all components are at their right place. Then we set
+    * the transform origin of both containers.
+    * I'll probably improve this in the future...
+    *
+    */
+    window.setTimeout(function() {
+      valet.setTransformOrigin($("#homepage-workshop-trigger"), $(".workshop-container"));
+      valet.setTransformOrigin($("#homepage-about-trigger"), $(".about-container"));
+    }, 100);
 
+    /**
+    * Initialize valet
+    *
+    */
     valet.init();
+
+    /**
+    * Initialize google analytics
+    *
+    */
     gae.init();
   });
 

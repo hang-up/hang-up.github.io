@@ -9,7 +9,7 @@ var WorkshopGrid = React.createClass({
 
     return (
       <div className="three column stackable row">
-      
+
       { item }
 
       <WorkshopFooter />
