@@ -1,11 +1,6 @@
 {
   "name": "hang-up",
   "version": "3.5.5",
-  "description": "Personal portfolio. 3rd iteration.",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Robert Hang",
   "license": "MIT",
   "devDependencies": {
