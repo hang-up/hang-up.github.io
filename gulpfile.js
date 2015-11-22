@@ -3,16 +3,18 @@
  *******************************/
 
  var gulp = require('gulp'),
-     concat = require('gulp-concat'),
-     concatCss = require('gulp-concat-css'),
+     babelify = require('babelify'),
+     browserify = require('browserify'),
+     buffer = require('vinyl-buffer'),
+     source = require('vinyl-source-stream'),
      uglify = require('gulp-uglify'),
+     concatCss = require('gulp-concat-css'),
      minifyCss = require('gulp-minify-css'),
-     react = require('gulp-react'),
      debug = require('gulp-debug');
 
 // List all paths used.
 var path = {
-  JS: ['script/components/*.js', 'script/valet.js' ],
+  JS: './script/valet.js',
   CSS: ['style/reset.css', 'style/app.css'],
   MINIFIED_OUT_JS: 'valet.min.js',
   SEMANTIC: 'style/semantic/*.css',
@@ -28,13 +30,16 @@ var path = {
  *******************************/
 
  // Takes all scripts in /script and creates a minified production script.
- gulp.task('transform', function () {
-     return gulp.src(path.JS)
-         .pipe(react())
-         .pipe(debug())
-         .pipe(concat(path.MINIFIED_OUT_JS))
-         .pipe(gulp.dest(path.DEST))
+ gulp.task("js", function() {
+   return browserify(path.JS)
+     .transform(babelify, {presets: ["es2015", "react"]})
+     .bundle()
+     .pipe(source(path.MINIFIED_OUT_JS)) // returns a vinyl-source-stream
+     .pipe(buffer()) // convert to a vinyl-buffer
+     .pipe(uglify()) // uglify everything
+     .pipe(gulp.dest(path.DEST));
  });
+
 
  // Minify app.css and reset.css.
  gulp.task('css', function () {
@@ -63,10 +68,10 @@ var path = {
   Watchers.
   *******************************/
 gulp.task('watch', function() {
-  gulp.watch('script/components/*.js', ['transform']);
+  gulp.watch('./script/components/*.js', ['js']);
 });
 
 
 // Default task.
 gulp.task('semantic', ['semantic-css']);
-gulp.task('default', ['transform', 'css', 'semantic']);
+gulp.task('default', ['js', 'css', 'semantic']);

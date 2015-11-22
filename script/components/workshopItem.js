@@ -31,3 +31,5 @@ var WorkshopItem = React.createClass({
     );
   }
 });
+
+export default WorkshopItem;

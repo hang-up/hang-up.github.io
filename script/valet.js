@@ -1,3 +1,6 @@
+import HomepageContainer from './components/homepageContainer.js';
+import WorkshopGrid from './components/workshopGrid.js';
+
 /**
 * Google Analytics Tracking script
 *
@@ -142,7 +145,7 @@ var valet = {
   */
   setTransformOrigin: function(trigger, container) {
     var left = trigger.offset().left + trigger.width(),
-    top = trigger.offset().top + trigger.width()/2 - $(window).scrollTop()
+    top = trigger.offset().top + trigger.width()/2 - $(window).scrollTop(),
     percentLeft = (left / ($(window).width())) * 100,
     percentTop = (top / ($(window).height())) * 100;
 
@@ -303,4 +306,4 @@ var valet = {
     gae.init();
   });
 
-})(window, this.document, jQuery, undefined);
+})(window, window.document, jQuery, undefined);

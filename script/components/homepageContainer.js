@@ -1,3 +1,7 @@
+import Preloader from './preloader.js';
+import HomepageVideo from './homepageVideo.js';
+import HomepageGrid from './homepageGrid.js';
+
 var HomepageContainer = React.createClass({
   getInitialState: function() {
     return {
@@ -44,7 +48,7 @@ var HomepageContainer = React.createClass({
   *
   * When the video can be played (onCanPlay event), we trigger the progressFinish
   * method that is reponsible for adding the appropriate classes for the prelaoder.
-  * 
+  *
   */
   render: function() {
     return (
@@ -66,3 +70,5 @@ var HomepageContainer = React.createClass({
     );
   }
 });
+
+export default HomepageContainer;

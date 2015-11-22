@@ -35,4 +35,6 @@ var HomepageGrid = React.createClass({
       </div>
     );
   }
-})
+});
+
+export default HomepageGrid;

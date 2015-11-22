@@ -8,4 +8,6 @@ var HomepageVideo = React.createClass({
       </div>
     );
   }
-})
+});
+
+export default HomepageVideo;

@@ -1,3 +1,6 @@
+import WorkshopItem from './workshopItem.js';
+import WorkshopFooter from './workshopFooter.js';
+
 var WorkshopGrid = React.createClass({
   render: function() {
     var item = this.props.data.map(function(item, index) {
@@ -19,3 +22,5 @@ var WorkshopGrid = React.createClass({
     );
   }
 });
+
+export default WorkshopGrid;

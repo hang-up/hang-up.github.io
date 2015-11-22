@@ -34,3 +34,5 @@ var Preloader = React.createClass({
     );
   }
 });
+
+export default Preloader;
