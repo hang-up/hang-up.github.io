@@ -283,7 +283,7 @@ var valet = {
 
     /**
     * This is hackish I'll admit it... We render everything with React and wait
-    * 100ms just to be sure all components are at their right place. Then we set
+    * 500ms just to be sure all components are at their right place. Then we set
     * the transform origin of both containers.
     * I'll probably improve this in the future...
     *
@@ -291,7 +291,7 @@ var valet = {
     window.setTimeout(function() {
       valet.setTransformOrigin($("#homepage-workshop-trigger"), $(".workshop-container"));
       valet.setTransformOrigin($("#homepage-about-trigger"), $(".about-container"));
-    }, 100);
+    }, 500);
 
     /**
     * Initialize valet
