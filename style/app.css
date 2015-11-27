@@ -20,6 +20,10 @@ video#bgvid {
     background-size: cover;
 }
 
+a[href='mailto:hello@hangontie.co'] {
+  color: #888;
+}
+
 .hidden {
   display: none;
 }

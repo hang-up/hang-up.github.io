@@ -45,7 +45,7 @@ var path = {
  gulp.task('css', function () {
      return gulp.src(path.CSS)
          .pipe(debug())
-         .pipe(concat(path.MINIFIED_OUT_CSS))
+         .pipe(concatCss(path.MINIFIED_OUT_CSS))
          .pipe(minifyCss())
          .pipe(gulp.dest(path.DEST))
  });
