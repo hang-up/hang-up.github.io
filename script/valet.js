@@ -156,17 +156,6 @@ var valet = {
   },
 
 
-  /**
-  * Initialize semantic's dimmer module.
-  *
-  *
-  */
-  initDimmer: function() {
-    $('.preview').dimmer({
-      on: 'hover'
-    });
-  },
-
   setOverflow(element, property){
     element.css("overflow", property);
   },
@@ -265,7 +254,6 @@ var valet = {
     var self = valet;
 
     self.bootstrap();
-    self.initDimmer();
     self.openModals();
     self.closeModals();
   }

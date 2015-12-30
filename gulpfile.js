@@ -67,8 +67,12 @@ var path = {
  /*******************************
   Watchers.
   *******************************/
-gulp.task('watch', function() {
+gulp.task('watchjs', function() {
   gulp.watch('./script/components/*.js', ['js']);
+});
+
+gulp.task('watchcss', function() {
+  gulp.watch('./style/*.css', ['css']);
 });
 
 

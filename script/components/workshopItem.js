@@ -2,9 +2,9 @@ var WorkshopItem = React.createClass({
   render: function() {
     return (
       <div className="column">
-        <div className="ui blurring fluid image preview">
-          <div className="ui dimmer">
-            <div className="content">
+        <div className="ui fluid image">
+          <div className="item-overlay">
+            <div className="content white">
               <div className="center">
                 <h3>{this.props.title}</h3>
                 <p>{this.props.caption}</p>

@@ -1,7 +1,7 @@
 var HomepageGrid = React.createClass({
   render: function() {
     return (
-      <div className="ui grid">
+      <div className="ui container grid">
 
             <div className="row">
               <div className="sixteen wide column center aligned">

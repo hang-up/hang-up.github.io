@@ -13,7 +13,6 @@ Here is a list of some of the technologies it uses:
 
 ### TODOS
 * *SMCSS approach to organize app.css (it starts to get messy...)*
-* *Rework on workshop item fading feature - get rid of dimmer.js which is conflicting with transit.js*
 * *Create a dedicated page for each project*
 
 
