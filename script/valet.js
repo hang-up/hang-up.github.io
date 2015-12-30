@@ -85,12 +85,12 @@ var valet = {
       thumbnail: '/Projects/Solar/thumbnail_solar.png'
     },
 
-    {
-      name: 'The Mile End Cococa Collective',
-      caption: 'Coming soon...',
-      link: '',
-      thumbnail: '/Projects/Cocoa/thumbnail_cocoa.png'
-    },
+    // {
+    //   name: 'The Mile End Cococa Collective',
+    //   caption: 'Coming soon...',
+    //   link: '',
+    //   thumbnail: '/Projects/Cocoa/thumbnail_cocoa.png'
+    // },
 
     {
       name: 'Made in France',
