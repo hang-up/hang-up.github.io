@@ -10,7 +10,7 @@ var WorkshopFooter = React.createClass({
           <p id="footer-title">
             Do you have time for a tea?
           </p>
-          <p>Drop me a line <a href="mailto:hello@hangontie.co" style={style}>here!</a> <br/><br/> Montreal. 2015.</p>
+          <p>Drop me a line <a href="mailto:rob@dice.today" style={style}>here!</a> <br/><br/> Montreal. 2015.</p>
         </div>
       </div>
     );
