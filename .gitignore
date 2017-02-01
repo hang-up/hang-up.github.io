@@ -6,3 +6,4 @@ node_modules
 # Ignore semantic files
 /style/semantic
 .DS_Store
+.idea
